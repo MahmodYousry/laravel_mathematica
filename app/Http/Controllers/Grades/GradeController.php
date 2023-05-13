@@ -22,7 +22,7 @@ class GradeController extends Controller {
 
         try {
             $grade = new Grade();
-            $grade->name = $request->name;
+            $grade->name = ['ar' => $request->name, 'en' => $request->name_en];
             $grade->notes = $request->notes;
             $grade->save();
             return redirect()->route('grades.index')->with('success', trans('grades.add_success'));
@@ -42,10 +42,10 @@ class GradeController extends Controller {
 
     }
 
-    public function update(Request $request, grade $grade) {
+    public function update(GradeRequest $request, grade $grade) {
         try {
             $grade->update([
-                $grade->name = $request->name,
+                $grade->name = ['ar' => $request->name, 'en' => $request->name_en],
                 $grade->notes = $request->notes,
             ]);
             return redirect()->route('grades.index')->with('success', trans('grades.edit_success'));

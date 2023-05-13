@@ -210,7 +210,7 @@
                                                             <div class="col-lg-6 col-md-6 col-xl-6">
                                                                 <div class="form-group">
                                                                     <label for="ar_grade">{{ trans('grades.name_in_arabic') }}</label>
-                                                                    <input id="ar_grade" type="text" class="form-control form-control-alt" value="{{$grade->name}}"
+                                                                    <input id="ar_grade" type="text" class="form-control form-control-alt" value="{{ $grade->getTranslation('name', 'ar') }}"
                                                                             name="name" placeholder="{{ trans('grades.name_in_arabic') }}">
                                                                 </div>
                                                             </div>
@@ -218,7 +218,7 @@
                                                                 <div class="form-group">
                                                                     <label for="ar_grade">{{ trans('grades.name_in_english') }}</label>
                                                                     <input type="text" class="form-control form-control-alt" id="ar_grade" placeholder="{{ trans('grades.name_in_english') }}"
-                                                                            name="en_name">
+                                                                            name="name_en" value="{{ $grade->getTranslation('name', 'en') }}">
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-12 col-xl-12">
