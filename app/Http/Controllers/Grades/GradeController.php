@@ -22,7 +22,7 @@ class GradeController extends Controller {
 
         try {
             $grade = new Grade();
-            $grade->name = ['ar' => $request->name, 'en' => $request->name_en];
+            $grade->name = ['ar' => $request->name, 'en' => $request->en_name];
             $grade->notes = $request->notes;
             $grade->save();
             return redirect()->route('grades.index')->with('success', trans('grades.add_success'));
@@ -45,7 +45,7 @@ class GradeController extends Controller {
     public function update(GradeRequest $request, grade $grade) {
         try {
             $grade->update([
-                $grade->name = ['ar' => $request->name, 'en' => $request->name_en],
+                $grade->name = ['ar' => $request->name, 'en' => $request->en_name],
                 $grade->notes = $request->notes,
             ]);
             return redirect()->route('grades.index')->with('success', trans('grades.edit_success'));
@@ -56,7 +56,7 @@ class GradeController extends Controller {
         }
     }
 
-    public function destroy(grade $grade) {
+    public function destroy(Grade $grade) {
         $grade->delete();
         return redirect()->route('grades.index')->with('success', 'Row Deleted Successfully!');
     }

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Grades\GradeController;
+use App\Http\Controllers\PostController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 
@@ -39,7 +40,7 @@ function(){
 
     Route::view('/page', 'page_default');
 
-
+    Route::resource('blog', PostController::class);
     Route::resource('grades', GradeController::class);
 
 });

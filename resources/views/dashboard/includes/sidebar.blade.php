@@ -123,17 +123,17 @@
                         <li class="nav-main-item">
                             <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
                                 <i class="nav-main-link-icon si si-badge"></i>
-                                <span class="nav-main-link-name">Services</span>
+                                <span class="nav-main-link-name">{{ trans('blog.blog') }}</span>
                             </a>
                             <ul class="nav-main-submenu">
                                 <li class="nav-main-item">
-                                    <a class="nav-main-link" href="be_ui_grid.html">
-                                        <span class="nav-main-link-name">Grid</span>
+                                    <a class="nav-main-link" href="{{ route('blog.index') }}">
+                                        <span class="nav-main-link-name">{{ trans('blog.posts') }}</span>
                                     </a>
                                 </li>
                                 <li class="nav-main-item">
-                                    <a class="nav-main-link" href="be_ui_typography.html">
-                                        <span class="nav-main-link-name">Typography</span>
+                                    <a class="nav-main-link" href="{{ route('blog.create') }}">
+                                        <span class="nav-main-link-name">{{ trans('blog.post_make') }}</span>
                                     </a>
                                 </li>
                             </ul>

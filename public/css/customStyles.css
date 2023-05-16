@@ -1,0 +1,22 @@
+
+/* Blog Page index */
+.content .block-content p iframe,
+.story p iframe {
+    width: 100%;
+    height: auto !important;
+    aspect-ratio: 16/9;
+}
+
+.content .block-content img,
+.story p img {
+    max-width: 100%;
+}
+
+.content .block-content p pre,
+pre {
+    background: #444;
+    padding: 10px 20px;
+    border-radius: 6px;
+    color: #eee;
+}
+

@@ -52,11 +52,11 @@
             <div class="dropdown d-inline-block ml-2">
                 <button type="button" class="btn btn-sm btn-dual d-flex align-items-center" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
-                    @if (App::getLocale() == 'ar')
-                        <img class="px-1 py-1" width="30px" height="auto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Egypt.svg/255px-Flag_of_Egypt.svg.png" alt="">
+                    @if (App::getLocale() == 'en')
+                        <img class="px-1 py-1" width="30px" height="auto" src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png" alt="">
                         {{ LaravelLocalization::getCurrentLocaleNative() }}
                     @else
-                        <img class="px-1 py-1" width="30px" height="auto" src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png" alt="">
+                        <img class="px-1 py-1" width="30px" height="auto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Egypt.svg/255px-Flag_of_Egypt.svg.png" alt="">
                         {{ LaravelLocalization::getCurrentLocaleNative() }}
                     @endif
 

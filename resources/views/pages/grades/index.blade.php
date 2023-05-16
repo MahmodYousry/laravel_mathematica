@@ -28,7 +28,10 @@
     <div class="content">
         <div class="block block-rounded">
 
+
+
             <div class="block-content block-content-full">
+
                 <!-- start add button -->
                 <button type="button" class="btn btn-success mr-1 mb-3" data-toggle="modal" data-target="#modal-add-grade">
                     <i class="fa fa-fw fa-plus mr-1"></i> {{ trans('grades.add_new_grade') }}
@@ -160,13 +163,12 @@
                                                 </div>
                                                 <div class="block-content font-size-sm">
                                                     {{-- start form --}}
-                                                    <form action="{{route('grades.destroy', $grade)}}" method="POST">
+                                                    <form action="{{ route('grades.destroy', $grade) }}" method="POST">
                                                         @csrf
                                                         @method('DELETE')
                                                         <div class="row">
                                                             <div class="col-lg-12 col-xl-12">
                                                                 <div class="form-group text-center">
-                                                                    {{-- <p>Are You Sure You Want To Delete "<strong>{{$grade->name}}</strong>"  ?</p> --}}
                                                                     <p>{{ trans('grades.before_delete_alert') }} </p>
                                                                     <p><strong>{{$grade->name}}</strong></p>
                                                                 </div>
@@ -218,7 +220,7 @@
                                                                 <div class="form-group">
                                                                     <label for="ar_grade">{{ trans('grades.name_in_english') }}</label>
                                                                     <input type="text" class="form-control form-control-alt" id="ar_grade" placeholder="{{ trans('grades.name_in_english') }}"
-                                                                            name="name_en" value="{{ $grade->getTranslation('name', 'en') }}">
+                                                                            name="en_name" value="{{ $grade->getTranslation('name', 'en') }}">
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-12 col-xl-12">

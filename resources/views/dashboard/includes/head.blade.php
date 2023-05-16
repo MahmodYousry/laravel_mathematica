@@ -25,14 +25,21 @@
         <link rel="apple-touch-icon" sizes="180x180" href="{{asset('dashboard/assets/media/favicons/apple-touch-icon-180x180.png')}}">
         <!-- END Icons -->
 
-        <!-- Page JS Plugins CSS dataTables -->
+        <!-- Page JS Plugins CSS Like dataTables -->
+        <link rel="stylesheet" href="{{ asset('dashboard/assets/js/plugins/magnific-popup/magnific-popup.css') }}">
         <link rel="stylesheet" href="{{asset('dashboard/assets/js/plugins/datatables/dataTables.bootstrap4.css')}}">
         <link rel="stylesheet" href="{{asset('dashboard/assets/js/plugins/datatables/buttons-bs4/buttons.bootstrap4.min.css')}}">
+        {{-- start Editor Plugn  --}}
+        <link rel="stylesheet" href="{{ asset('dashboard/assets/js/plugins/summernote/summernote-bs4.css') }} ">
+        <link rel="stylesheet" href="{{ asset('dashboard/assets/js/plugins/simplemde/simplemde.min.css') }} ">
+
 
         <!-- Stylesheets -->
         <!-- Fonts and OneUI framework -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
         <link rel="stylesheet" id="css-main" href="{{asset('dashboard/assets/css/oneui.min.css')}}">
+        <!-- Custom Styles -->
+        <link rel="stylesheet" href="{{asset('css/customStyles.css')}}">
 
         <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
         <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/amethyst.min.css"> -->
