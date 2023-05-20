@@ -109,13 +109,26 @@
                             <i class="fa fa-fw fa-check"></i>
                         </div>
                         <div class="flex-fill ml-3">
-                            <p class="mb-0">{{ session('success') }}</p>
+                            <p class="mb-0 text-capitalize">{{ session('success') }}</p>
                         </div>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">×</span>
                         </button>
                     </div>
                 @endif
+                @if(session('error'))
+                        <div class="alert alert-danger d-flex align-items-center animated fadeInDown" role="alert">
+                            <div class="flex-00-auto">
+                                <i class="far fa-sad-tear fa-fw"></i>
+                            </div>
+                            <div class="flex-fill ml-3">
+                                <p class="mb-0 text-capitalize">{{ session('error') }}</p>
+                            </div>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                    @endif
                 {{-- end errors And Alerts --}}
 
                 <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _js/pages/be_tables_datatables.js -->
@@ -246,7 +259,6 @@
                                     </div>
                                 </div>
                                 <!-- END edit modal Content -->
-
                             </tr>
                         @endforeach
 

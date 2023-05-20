@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Grades;
 
 use App\Models\Grade;
+use App\Models\Classroom;
 use Illuminate\Http\Request;
 use App\Http\Requests\GradeRequest;
 use App\Http\Controllers\Controller;
@@ -12,10 +13,6 @@ class GradeController extends Controller {
     public function index() {
         $grades = Grade::all();
         return view('pages.grades.index', compact('grades'));
-    }
-
-    public function create() {
-
     }
 
     public function store(GradeRequest $request, Grade $grade) {
@@ -34,21 +31,17 @@ class GradeController extends Controller {
 
     }
 
-    public function show(Grade $grade) {
-
-    }
-
-    public function edit(grade $grade) {
-
-    }
-
     public function update(GradeRequest $request, grade $grade) {
         try {
-            $grade->update([
-                $grade->name = ['ar' => $request->name, 'en' => $request->en_name],
-                $grade->notes = $request->notes,
-            ]);
-            return redirect()->route('grades.index')->with('success', trans('grades.edit_success'));
+            $grade->name = ['ar' => $request->name, 'en' => $request->en_name];
+            $grade->notes = $request->notes;
+
+            if ($grade->update()) {
+                return redirect()->route('grades.index')->with('success', trans('action.data_save_success'));
+            } else {
+                return redirect()->route('grades.index')->with('success', trans('action.data_save_fail'));
+            }
+
         }
 
         catch (\Exception $e){
@@ -57,7 +50,14 @@ class GradeController extends Controller {
     }
 
     public function destroy(Grade $grade) {
-        $grade->delete();
-        return redirect()->route('grades.index')->with('success', 'Row Deleted Successfully!');
+        // look for grade id in classroom table if there is then it cannot be deleted
+        $classroom_grade_id = Classroom::where('grade_id', $grade->id)->pluck('grade_id');
+
+        if ($classroom_grade_id->count() == 0) {
+            $grade->delete();
+            return redirect()->route('grades.index')->with('success', trans('action.data_delete_success'));
+        } else {
+            return redirect()->route('grades.index')->with('error', trans('action.data_exist_else_success'));
+        }
     }
 }

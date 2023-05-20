@@ -22,7 +22,7 @@ return [
     'optional_field' => 'optional field no need to fill it',
     'add_success' => 'A New Grade Created Successfully !',
     'edit_success' => 'Grade Edit Saved Successfully !',
-    '' => '',
+    'grade_name' => 'Grade Name',
     '' => '',
     '' => '',
     '' => '',

@@ -117,6 +117,19 @@
                                 <span class="nav-main-link-name">{{ trans('sidebar.grades') }}</span>
                             </a>
                         </li>
+                        <li class="nav-main-item">
+                            <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                                <i class="nav-main-link-icon si si-grid"></i>
+                                <span class="nav-main-link-name">{{ trans('main_trans.classes') }}</span>
+                            </a>
+                            <ul class="nav-main-submenu">
+                                <li class="nav-main-item">
+                                    <a class="nav-main-link" href="{{ route('classrooms.index') }}">
+                                        <span class="nav-main-link-name">{{ trans('myclass.list_classes') }}</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
                         <li class="nav-main-heading">Others</li>
 
@@ -138,19 +151,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-main-item">
-                            <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
-                                <i class="nav-main-link-icon si si-grid"></i>
-                                <span class="nav-main-link-name">Projects</span>
-                            </a>
-                            <ul class="nav-main-submenu">
-                                <li class="nav-main-item">
-                                    <a class="nav-main-link" href="be_tables_styles.html">
-                                        <span class="nav-main-link-name">Styles</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+
 
                         <li class="nav-main-item">
                             <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">

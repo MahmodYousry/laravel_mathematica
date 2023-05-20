@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\Grades\GradeController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ClassroomController;
+use App\Http\Controllers\Grades\GradeController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 
@@ -41,6 +42,11 @@ function(){
     Route::view('/page', 'page_default');
 
     Route::resource('blog', PostController::class);
+
+    Route::post('filter_classes', [ClassroomController::class, 'filter_classes'])->name('filter_classes');
+    Route::post('delete_all', [ClassroomController::class, 'delete_all'])->name('delete_all_classrooms');
+
+    Route::resource('classrooms', ClassroomController::class);
     Route::resource('grades', GradeController::class);
 
 });

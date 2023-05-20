@@ -18,6 +18,8 @@
         <meta property="og:url" content="">
         <meta property="og:image" content="">
 
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
         <!-- Icons -->
         <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
         <link rel="shortcut icon" href="{{asset('dashboard/assets/media/favicons/favicon.png')}}">
@@ -43,6 +45,7 @@
 
         <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
         <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/amethyst.min.css"> -->
+        @yield('css_adds')
         <!-- END Stylesheets -->
     </head>
     <body>
