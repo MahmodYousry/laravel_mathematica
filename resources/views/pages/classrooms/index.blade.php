@@ -407,141 +407,141 @@
                 success: function(response) {
                     // Handle a successful response
                     console.log(response);
-                    // window.location.reload();
+                    window.location.reload();
                     // Do something with the data
-                    var table_data, modal_edit, modal_delete;
-                    var newDatatr = [];
-                    var newModals = [];
-                    $('tbody').children().remove();
-                    $('.odd').hide();
-                    for (i = 0; i < response.classes.length; i++) {
-                        table_data = `
-                            <tr>
-                                <td class="text-center"><input type="checkbox" value="${response.classes[i].id}" class="box1"></td>
-                                <td class="text-center font-size-sm">${i + 1}</td>
-                                <td class="font-w600 font-size-sm"><a href="#">${response.classes[i].class_name.en}</a></td>
-                                <td class="text-center">${response.classes[i].grade_id}</td>
-                                <td>
-                                    <div class="d-flex flex-xs-column flex-sm-column flex-md-row justify-content-start">
-                                    <button type="button" class="btn btn-sm btn-primary m-1" data-toggle="modal" data-target="#modal-edit-classroom${response.classes[i].id}">
-                                        <i class="fa fa-fw fa-edit mr-1"></i> edit
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-danger m-1" data-toggle="modal" data-target="#modal-delete-classroom${response.classes[i].id}">
-                                        <i class="fa fa-fw fa-times mr-1"></i> delete
-                                    </button>
-                                    </div>
-                                </td>
-                            </tr>`;
+                    // var table_data, modal_edit, modal_delete;
+                    // var newDatatr = [];
+                    // var newModals = [];
+                    // $('tbody').children().remove();
+                    // $('.odd').hide();
+                    // for (i = 0; i < response.classes.length; i++) {
+                    //     table_data = `
+                    //         <tr>
+                    //             <td class="text-center"><input type="checkbox" value="${response.classes[i].id}" class="box1"></td>
+                    //             <td class="text-center font-size-sm">${i + 1}</td>
+                    //             <td class="font-w600 font-size-sm"><a href="#">${response.classes[i].class_name.en}</a></td>
+                    //             <td class="text-center">${response.classes[i].grade_id}</td>
+                    //             <td>
+                    //                 <div class="d-flex flex-xs-column flex-sm-column flex-md-row justify-content-start">
+                    //                 <button type="button" class="btn btn-sm btn-primary m-1" data-toggle="modal" data-target="#modal-edit-classroom${response.classes[i].id}">
+                    //                     <i class="fa fa-fw fa-edit mr-1"></i> edit
+                    //                 </button>
+                    //                 <button type="button" class="btn btn-sm btn-danger m-1" data-toggle="modal" data-target="#modal-delete-classroom${response.classes[i].id}">
+                    //                     <i class="fa fa-fw fa-times mr-1"></i> delete
+                    //                 </button>
+                    //                 </div>
+                    //             </td>
+                    //         </tr>`;
 
-                        modal_delete = `<!-- start delete modal Content -->
-                            <div class="modal fade" id="modal-delete-classroom${response.classes[i].id}" tabindex="-1" role="dialog" aria-labelledby="modal-block-large" aria-hidden="true">
-                                <div class="modal-dialog modal-md modal-dialog-centered" role="document">
-                                    <div class="modal-content">
-                                        <div class="block block-rounded block-themed block-transparent mb-0">
-                                            <div class="block-header bg-primary-dark">
-                                                <h3 class="block-title">Delete Class</h3>
-                                                <div class="block-options">
-                                                    <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
-                                                        <i class="fa fa-fw fa-times"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <div class="block-content font-size-sm">
-                                                <!-- start form -->
-                                                <form action="{{ route('classrooms.destroy', $my_classroom) }}" method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <div class="row">
-                                                        <div class="col-lg-12 col-xl-12">
-                                                            <div class="form-group text-center">
-                                                                <p>{{ trans('grades.before_delete_alert') }}</p>
-                                                                <p><strong>${response.classes[i].id}</strong></p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="block-content text-center border-top">
-                                                            <div class="form-group">
-                                                                <button type="submit" class="btn btn-md btn-danger">
-                                                                    <i class="fa fa-fw fa-times mr-1"></i> yes
-                                                                </button>
-                                                                <button type="button" class="btn btn-alt-primary mr-1" data-dismiss="modal">No</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                                <!-- End form -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- END delete modal Content -->`;
+                    //     modal_delete = `<!-- start delete modal Content -->
+                    //         <div class="modal fade" id="modal-delete-classroom${response.classes[i].id}" tabindex="-1" role="dialog" aria-labelledby="modal-block-large" aria-hidden="true">
+                    //             <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+                    //                 <div class="modal-content">
+                    //                     <div class="block block-rounded block-themed block-transparent mb-0">
+                    //                         <div class="block-header bg-primary-dark">
+                    //                             <h3 class="block-title">Delete Class</h3>
+                    //                             <div class="block-options">
+                    //                                 <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
+                    //                                     <i class="fa fa-fw fa-times"></i>
+                    //                                 </button>
+                    //                             </div>
+                    //                         </div>
+                    //                         <div class="block-content font-size-sm">
+                    //                             <!-- start form -->
+                    //                             <form action="{{ route('classrooms.destroy', $my_classroom) }}" method="POST">
+                    //                                 @csrf
+                    //                                 @method('DELETE')
+                    //                                 <div class="row">
+                    //                                     <div class="col-lg-12 col-xl-12">
+                    //                                         <div class="form-group text-center">
+                    //                                             <p>{{ trans('grades.before_delete_alert') }}</p>
+                    //                                             <p><strong>${response.classes[i].id}</strong></p>
+                    //                                         </div>
+                    //                                     </div>
+                    //                                     <div class="block-content text-center border-top">
+                    //                                         <div class="form-group">
+                    //                                             <button type="submit" class="btn btn-md btn-danger">
+                    //                                                 <i class="fa fa-fw fa-times mr-1"></i> yes
+                    //                                             </button>
+                    //                                             <button type="button" class="btn btn-alt-primary mr-1" data-dismiss="modal">No</button>
+                    //                                         </div>
+                    //                                     </div>
+                    //                                 </div>
+                    //                             </form>
+                    //                             <!-- End form -->
+                    //                         </div>
+                    //                     </div>
+                    //                 </div>
+                    //             </div>
+                    //         </div>
+                    //         <!-- END delete modal Content -->`;
 
-                        modal_edit = `<!-- edit modal Content -->
-                            <div class="modal fade" id="modal-edit-classroom${response.classes[i].id}" tabindex="-1" role="dialog" aria-labelledby="modal-block-large" aria-hidden="true">
-                                <div class="modal-dialog modal-md modal-dialog-centered" role="document">
-                                    <div class="modal-content">
-                                        <div class="block block-rounded block-themed block-transparent mb-0">
-                                            <div class="block-header bg-primary-dark">
-                                                <h3 class="block-title">{{ trans('grades.edit_grade') }}</h3>
-                                                <div class="block-options">
-                                                    <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
-                                                        <i class="fa fa-fw fa-times"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <div class="block-content font-size-sm">
-                                                <form action="{{ route('classrooms.update', $my_classroom) }}" method="POST">
-                                                    @csrf
-                                                    @method('PUT')
-                                                    <div class="row">
-                                                        <div class="col-lg-6 col-md-6 col-xl-6">
-                                                            <div class="form-group">
-                                                                <label for="ar_grade">{{ trans('myclass.name_class') }}</label>
-                                                                <input id="ar_grade" type="text" class="form-control form-control-alt" value="${response.classes[i].class_name.ar}"
-                                                                        name="class_name" placeholder="{{ trans('myclass.name_class') }}">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6 col-md-6 col-xl-6">
-                                                            <div class="form-group">
-                                                                <label for="ar_grade">{{ trans('myclass.name_class_en') }}</label>
-                                                                <input type="text" class="form-control form-control-alt" id="ar_grade" placeholder="{{ trans('myclass.name_class_en') }}"
-                                                                        name="class_name_en" value="${response.classes[i].class_name.en}">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-12 col-md-12 col-xl-12">
-                                                            <div class="form-group">
-                                                                <label for="grade_id">{{ trans('grades.grade_name') }}</label>
-                                                                <select class="form-control form-control-alt" name="grade_id" id="grade_id">
-                                                                    @foreach ($grades as $grade)
-                                                                        <option value="{{ $grade->id }}" {{ ($grade->id == $my_classroom->grade_id) ? 'selected' : "" }} >{{$grade->name}}</option>
-                                                                    @endforeach
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="block-content text-left border-top">
-                                                            <div class="form-group">
-                                                                <button type="button" class="btn btn-alt-primary mr-1" data-dismiss="modal">{{ trans('grades.cancel') }}</button>
-                                                                <button type="submit" class="btn btn-md btn-primary">
-                                                                    <i class="fa fa-fw fa-check"></i> {{ trans('grades.update') }}
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- END edit modal Content -->`;
+                    //     modal_edit = `<!-- edit modal Content -->
+                    //         <div class="modal fade" id="modal-edit-classroom${response.classes[i].id}" tabindex="-1" role="dialog" aria-labelledby="modal-block-large" aria-hidden="true">
+                    //             <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+                    //                 <div class="modal-content">
+                    //                     <div class="block block-rounded block-themed block-transparent mb-0">
+                    //                         <div class="block-header bg-primary-dark">
+                    //                             <h3 class="block-title">{{ trans('grades.edit_grade') }}</h3>
+                    //                             <div class="block-options">
+                    //                                 <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
+                    //                                     <i class="fa fa-fw fa-times"></i>
+                    //                                 </button>
+                    //                             </div>
+                    //                         </div>
+                    //                         <div class="block-content font-size-sm">
+                    //                             <form action="{{ route('classrooms.update', $my_classroom) }}" method="POST">
+                    //                                 @csrf
+                    //                                 @method('PUT')
+                    //                                 <div class="row">
+                    //                                     <div class="col-lg-6 col-md-6 col-xl-6">
+                    //                                         <div class="form-group">
+                    //                                             <label for="ar_grade">{{ trans('myclass.name_class') }}</label>
+                    //                                             <input id="ar_grade" type="text" class="form-control form-control-alt" value="${response.classes[i].class_name.ar}"
+                    //                                                     name="class_name" placeholder="{{ trans('myclass.name_class') }}">
+                    //                                         </div>
+                    //                                     </div>
+                    //                                     <div class="col-lg-6 col-md-6 col-xl-6">
+                    //                                         <div class="form-group">
+                    //                                             <label for="ar_grade">{{ trans('myclass.name_class_en') }}</label>
+                    //                                             <input type="text" class="form-control form-control-alt" id="ar_grade" placeholder="{{ trans('myclass.name_class_en') }}"
+                    //                                                     name="class_name_en" value="${response.classes[i].class_name.en}">
+                    //                                         </div>
+                    //                                     </div>
+                    //                                     <div class="col-lg-12 col-md-12 col-xl-12">
+                    //                                         <div class="form-group">
+                    //                                             <label for="grade_id">{{ trans('grades.grade_name') }}</label>
+                    //                                             <select class="form-control form-control-alt" name="grade_id" id="grade_id">
+                    //                                                 @foreach ($grades as $grade)
+                    //                                                     <option value="{{ $grade->id }}" {{ ($grade->id == $my_classroom->grade_id) ? 'selected' : "" }} >{{$grade->name}}</option>
+                    //                                                 @endforeach
+                    //                                             </select>
+                    //                                         </div>
+                    //                                     </div>
+                    //                                     <div class="block-content text-left border-top">
+                    //                                         <div class="form-group">
+                    //                                             <button type="button" class="btn btn-alt-primary mr-1" data-dismiss="modal">{{ trans('grades.cancel') }}</button>
+                    //                                             <button type="submit" class="btn btn-md btn-primary">
+                    //                                                 <i class="fa fa-fw fa-check"></i> {{ trans('grades.update') }}
+                    //                                             </button>
+                    //                                         </div>
+                    //                                     </div>
+                    //                                 </div>
+                    //                             </form>
+                    //                         </div>
+                    //                     </div>
+                    //                 </div>
+                    //             </div>
+                    //         </div>
+                    //         <!-- END edit modal Content -->`;
 
-                            newDatatr[i] = table_data;
-                            newModals[i] = modal_delete + modal_edit;
-                            console.log(newDatatr[i]);
-                        }
+                    //         newDatatr[i] = table_data;
+                    //         newModals[i] = modal_delete + modal_edit;
+                    //         console.log(newDatatr[i]);
+                    //     }
 
-                    $('tbody').append(newDatatr.join(''));
-                    $('.table').append(newModals.join(''));
+                    // $('tbody').append(newDatatr.join(''));
+                    // $('.table').append(newModals.join(''));
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     // Handle an error response

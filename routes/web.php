@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\Grades\GradeController;
+use App\Http\Controllers\SectionController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 
@@ -36,6 +37,7 @@ Route::group(
 		'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'auth']
 	],
 function(){
+
     Route::view('/', 'dashboard');
     Route::view('/dashboard', 'dashboard')->name('main');
 
@@ -46,6 +48,11 @@ function(){
     Route::post('filter_classes', [ClassroomController::class, 'filter_classes'])->name('filter_classes');
     Route::post('delete_all', [ClassroomController::class, 'delete_all'])->name('delete_all_classrooms');
 
+    // Made For Ajax Request - Sections View Page - add section modal - Select Box
+    Route::get('/classes/{id}', [SectionController::class, 'getclasses']);
+
+    // Resources
+    Route::resource('sections', SectionController::class);
     Route::resource('classrooms', ClassroomController::class);
     Route::resource('grades', GradeController::class);
 

@@ -106,12 +106,15 @@ class ClassroomController extends Controller
         return redirect()->back()->with('success', trans('action.data_delete_success'));
     }
 
-    public function filter_classes(Request $request)
-    {
+    public function filter_classes(Request $request) {
         $my_classes = Classroom::where('grade_id', $request->grade_id)->get();
         $grades = Grade::all();
         $Search = Classroom::select('*')->where('grade_id','=',$request->grade_id)->get();
-        return view('pages.classrooms.index', compact('grades', 'my_classes'))->withDetails($Search);
-    }
+        return view('pages.classrooms.index', [
+          'grades' => $grades,
+          'my_classes' => $my_classes,
+          'details' => $Search
+        ]);
+      }
 
 }

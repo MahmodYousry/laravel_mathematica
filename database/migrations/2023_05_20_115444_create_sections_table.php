@@ -13,12 +13,13 @@ class CreateSectionsTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('sections');
         Schema::create('sections', function (Blueprint $table) {
             $table->id();
             $table->string('section_name');
             $table->integer('Status');
-            $table->bigInteger('grade_id')->unsigned();
-            $table->bigInteger('class_id')->unsigned();
+            $table->foreignId('grade_id')->constrained()->onDelete('cascade');
+            $table->foreignId('classroom_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
