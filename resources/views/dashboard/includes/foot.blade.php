@@ -46,11 +46,12 @@
         <!-- Page JS Code -->
         <script src="{{asset('dashboard/assets/js/pages/be_pages_dashboard.min.js')}}"></script>
 
-        @yield('scripts')
-
         <!-- Page JS Helpers (jQuery Sparkline Plugins) -->
         <script>jQuery(function () {
-            One.helpers(['sparkline', 'magnific-popup', 'ckeditor5', 'summernote', 'ckeditor', 'simplemde']);
+            One.helpers(['sparkline', 'magnific-popup', 'ckeditor5', 'summernote', 'ckeditor', 'simplemde', 'js-wizard']);
         });</script>
+
+        @yield('scripts')
+
     </body>
 </html>

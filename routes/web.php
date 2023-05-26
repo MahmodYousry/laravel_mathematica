@@ -51,6 +51,7 @@ function(){
     // Made For Ajax Request - Sections View Page - add section modal - Select Box
     Route::get('/classes/{id}', [SectionController::class, 'getclasses']);
 
+    Route::view('add_parents', 'livewire.show_form');
     // Resources
     Route::resource('sections', SectionController::class);
     Route::resource('classrooms', ClassroomController::class);

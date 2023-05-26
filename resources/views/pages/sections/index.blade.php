@@ -172,7 +172,7 @@
                                                     <i class="fa fa-fw fa-edit mr-1"></i> {{ trans('grades.edit') }}
                                                 </button>
                                                 <button type="button" class="btn btn-sm btn-danger m-1" data-toggle="modal"
-                                                            data-target="#modal-delete-section">
+                                                            data-target="#modal-delete-section{{$list_sections->id}}">
                                                     <i class="fa fa-fw fa-times mr-1"></i> {{ trans('grades.delete') }}
                                                 </button>
                                             </div>
@@ -258,6 +258,50 @@
                                             </div>
                                         </div>
                                         <!-- End edit section modal -->
+
+                                        <!-- start delete section modal -->
+                                        <div class="modal fade" id="modal-delete-section{{$list_sections->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-block-large" aria-hidden="true">
+                                            <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                    <div class="block block-rounded block-themed block-transparent mb-0">
+                                                        <div class="block-header bg-primary-dark">
+                                                            <h3 class="block-title">{{ trans('sections.delete_class') }}</h3>
+                                                            <div class="block-options">
+                                                                <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
+                                                                    <i class="fa fa-fw fa-times"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="block-content font-size-sm">
+                                                            {{-- start form --}}
+                                                            <form action="{{ route('sections.destroy', $list_sections->id) }}" method="POST">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <div class="row">
+                                                                    <div class="col-lg-12 col-xl-12">
+                                                                        <div class="form-group text-center">
+                                                                            <input type="hidden" name="id" class="form-control" value="{{ $list_sections->id }}">
+                                                                            <p>{{ trans('grades.before_delete_alert') }}</p>
+                                                                            <p><strong>{{$list_sections->section_name}}</strong></p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="block-content text-center border-top">
+                                                                        <div class="form-group">
+                                                                            <button type="submit" class="btn btn-md btn-danger">
+                                                                                <i class="fa fa-fw fa-times mr-1"></i> {{ trans('grades.yes') }}
+                                                                            </button>
+                                                                            <button type="button" class="btn btn-alt-primary mr-1" data-dismiss="modal">{{ trans('grades.no') }}</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                            {{-- End form --}}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- END delete section modal -->
 
                                     </tr>
                                 @endforeach

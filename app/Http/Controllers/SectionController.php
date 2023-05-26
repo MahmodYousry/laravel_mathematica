@@ -83,9 +83,13 @@ class SectionController extends Controller
 
     }
 
-    public function destroy($id)
+    public function destroy(request $request)
     {
-        //
+        if (Section::findOrFail($request->id)->delete()) {
+            return redirect()->route('sections.index')->with('success', trans('action.data_delete_success'));
+        } else {
+            return redirect()->route('sections.index')->with('success', trans('action.data_delete_fail'));
+        }
     }
 
     public function getclasses($id)
