@@ -7,6 +7,8 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\Grades\GradeController;
 use App\Http\Controllers\SectionController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TeacherController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 
@@ -48,11 +50,17 @@ function(){
     Route::post('filter_classes', [ClassroomController::class, 'filter_classes'])->name('filter_classes');
     Route::post('delete_all', [ClassroomController::class, 'delete_all'])->name('delete_all_classrooms');
 
+    Route::view('add_parents', 'livewire.show_form');
+
     // Made For Ajax Request - Sections View Page - add section modal - Select Box
     Route::get('/classes/{id}', [SectionController::class, 'getclasses']);
+    // Select box Ajax Call on [views/pages/students/create]
+    Route::get('/Get_classrooms/{id}', [StudentController::class, 'Get_classrooms']);
+    Route::get('/Get_Sections/{id}', [StudentController::class, 'Get_Sections']);
 
-    Route::view('add_parents', 'livewire.show_form');
     // Resources
+    Route::resource('students', StudentController::class);
+    Route::resource('teachers', TeacherController::class);
     Route::resource('sections', SectionController::class);
     Route::resource('classrooms', ClassroomController::class);
     Route::resource('grades', GradeController::class);

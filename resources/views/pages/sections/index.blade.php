@@ -109,6 +109,16 @@
                                             </select>
                                         </div>
                                     </div>
+                                    <div class="col-lg-12 col-xl-12">
+                                        <div class="form-group">
+                                            <label for="teacher_id">{{ trans('teachers.add_teacher') }}</label>
+                                            <select class="form-control" id="teacher_id" name="teacher_id[]" size="5" multiple>
+                                                @foreach ($teachers as $teacher)
+                                                    <option value="{{$teacher->id}}">{{$teacher->Name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
@@ -237,6 +247,20 @@
                                                                                     {{ ($list_sections->Status === 1) ? 'checked' : "" }} id="section_status{{$list_sections->id}}">
                                                                                     <label class="custom-control-label" for="section_status{{$list_sections->id}}">{{ trans('sections.Status') }}</label>
                                                                                 </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-12 col-xl-12">
+                                                                            <div class="form-group">
+                                                                                <label for="teacher_id">{{ trans('teachers.add_teacher') }}</label>
+                                                                                <select class="form-control" id="teacher_id" name="teacher_id[]" size="5" multiple>
+                                                                                    @foreach ($list_sections->teachers as $teacher)
+                                                                                        <option value="{{$teacher->id}}">{{$teacher->Name}}</option>
+                                                                                    @endforeach
+
+                                                                                    @foreach ($teachers as $teacher)
+                                                                                        <option value="{{$teacher->id}}" {{ ($teacher->id == $list_sections->teacher_id) ? 'selected' : "" }}>{{$teacher->Name}}</option>
+                                                                                    @endforeach
+                                                                                </select>
                                                                             </div>
                                                                         </div>
                                                                     </div>

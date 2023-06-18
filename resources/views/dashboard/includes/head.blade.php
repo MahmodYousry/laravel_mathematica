@@ -4,16 +4,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-        <title>Mr Mathematica</title>
+        <title>School Management</title>
 
-        <meta name="description" content="Admin Mr Mathematica">
+        <meta name="description" content="Admin Mahmoud Yousry">
         <meta name="author" content="pixelcave">
         <meta name="robots" content="noindex, nofollow">
 
         <!-- Open Graph Meta -->
-        <meta property="og:title" content="Admin Mr Mathematica">
-        <meta property="og:site_name" content="Admin Mr Mathematica">
-        <meta property="og:description" content="Admin Mr Mathematica">
+        <meta property="og:title" content="Admin Mr Mahmoud Yousry">
+        <meta property="og:site_name" content="Admin Mr Mahmoud Yousry">
+        <meta property="og:description" content="Admin Mr Mahmoud Yousry">
         <meta property="og:type" content="website">
         <meta property="og:url" content="">
         <meta property="og:image" content="">
@@ -35,11 +35,11 @@
         <link rel="stylesheet" href="{{ asset('dashboard/assets/js/plugins/summernote/summernote-bs4.css') }} ">
         <link rel="stylesheet" href="{{ asset('dashboard/assets/js/plugins/simplemde/simplemde.min.css') }} ">
 
-
         <!-- Stylesheets -->
         <!-- Fonts and OneUI framework -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
         <link rel="stylesheet" id="css-main" href="{{asset('dashboard/assets/css/oneui.min.css')}}">
+
         <!-- Custom Styles -->
         <link rel="stylesheet" href="{{asset('css/customStyles.css')}}">
         <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->

@@ -147,13 +147,46 @@
 
                         <li class="nav-main-item">
                             <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
-                                <i class="nav-main-link-icon si si-user"></i>
+                                <i class="nav-main-link-icon fa fa-user-tie"></i>
                                 <span class="nav-main-link-name">{{ trans('main_trans.Parents') }}</span>
                             </a>
                             <ul class="nav-main-submenu">
                                 <li class="nav-main-item">
                                     <a class="nav-main-link" href="{{ url('add_parents') }}">
                                         <span class="nav-main-link-name">{{ trans('main_trans.List_Parents') }}</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-main-item">
+                            <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                                <i class="nav-main-link-icon fa fa-chalkboard-teacher"></i>
+                                <span class="nav-main-link-name">{{ trans('main_trans.Teachers') }}</span>
+                            </a>
+                            <ul class="nav-main-submenu">
+                                <li class="nav-main-item">
+                                    <a class="nav-main-link" href="{{ route('teachers.index') }}">
+                                        <span class="nav-main-link-name">{{ trans('main_trans.List_Teachers') }}</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-main-item">
+                            <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                                <i class="nav-main-link-icon fa fa-user-graduate"></i>
+                                <span class="nav-main-link-name">{{ trans('main_trans.students') }}</span>
+                            </a>
+                            <ul class="nav-main-submenu">
+                                <li class="nav-main-item">
+                                    <a class="nav-main-link" href="{{ route('students.create') }}">
+                                        <span class="nav-main-link-name">{{ trans('main_trans.add_student') }}</span>
+                                    </a>
+                                </li>
+                                <li class="nav-main-item">
+                                    <a class="nav-main-link" href="{{ route('students.index') }}">
+                                        <span class="nav-main-link-name">{{ trans('main_trans.students_list') }}</span>
                                     </a>
                                 </li>
                             </ul>

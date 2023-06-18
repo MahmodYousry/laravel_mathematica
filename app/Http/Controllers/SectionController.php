@@ -7,6 +7,7 @@ use App\Models\Section;
 use App\Models\Classroom;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreSections;
+use App\Models\Teacher;
 
 class SectionController extends Controller
 {
@@ -15,7 +16,8 @@ class SectionController extends Controller
     {
         $grades = Grade::with(['sections'])->get();
         $grades_list = Grade::all();
-        return view('pages.sections.index', compact('grades', 'grades_list'));
+        $teachers = Teacher::all();
+        return view('pages.sections.index', compact('grades', 'grades_list', 'teachers'));
     }
 
     public function create()
@@ -35,6 +37,8 @@ class SectionController extends Controller
             $Sections->classroom_id = $request->class_id;
             $Sections->status = 1;
             $Sections->save();
+
+            $Sections->teachers()->attach($request->teacher_id);
 
             return redirect()->back()->with('success', trans('action.data_save_success'));
 
@@ -70,6 +74,13 @@ class SectionController extends Controller
                 $Sections->Status = 1;
             } else {
                 $Sections->Status = 2;
+            }
+
+            // Update Pivote Table
+            if (isset($request->teacher_id)) {
+                $Sections->teachers()->sync($request->teacher_id);
+            } else {
+                $Sections->teachers()->sync(array());
             }
 
             $Sections->save();

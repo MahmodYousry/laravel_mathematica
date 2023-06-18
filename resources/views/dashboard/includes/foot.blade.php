@@ -48,7 +48,7 @@
 
         <!-- Page JS Helpers (jQuery Sparkline Plugins) -->
         <script>jQuery(function () {
-            One.helpers(['sparkline', 'magnific-popup', 'ckeditor5', 'summernote', 'ckeditor', 'simplemde', 'js-wizard']);
+            One.helpers(['sparkline', 'magnific-popup', 'ckeditor5', 'summernote', 'ckeditor', 'simplemde', 'js-wizard', 'datepicker', 'flatpickr']);
         });</script>
 
         @yield('scripts')

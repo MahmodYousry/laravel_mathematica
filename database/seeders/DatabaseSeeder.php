@@ -21,5 +21,9 @@ class DatabaseSeeder extends Seeder
         $this->call(ReligionTableSeeder::class);
         // User Email
         $this->call(UserSeeder::class);
+        // Genders
+        $this->call(GenderSeeder::class);
+        // Specialization Of Subject
+        $this->call(SpecializationSeeder::class);
     }
 }
