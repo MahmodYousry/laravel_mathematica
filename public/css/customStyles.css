@@ -5,6 +5,8 @@
     width: 100%;
     height: auto !important;
     aspect-ratio: 16/9;
+    border: 5px solid rgb(39 46 56);
+    box-sizing: content-box;
 }
 
 .content .block-content img,

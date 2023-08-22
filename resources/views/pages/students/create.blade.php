@@ -74,7 +74,7 @@
                     @endif
                     {{-- end errors And Alerts --}}
 
-                    <form action="{{ route('students.store') }}" method="POST">
+                    <form action="{{ route('students.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <h2 class="content-heading mb-4 p-0">{{ trans('students.personal_information') }}</h2>
                         <div class="form-row my-3">
@@ -110,7 +110,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="col-xl-3">
+                            <div class="col-xl-3 mb-3">
                                 <label>{{trans('teachers.gender')}}</label>
                                 <select class="custom-select my-1 mr-sm-2" name="gender_id">
                                     <option selected>{{trans('Parent_trans.Choose')}}...</option>
@@ -119,7 +119,7 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="col-xl-3">
+                            <div class="col-xl-3  mb-3">
                                 <label>{{ trans('Parent_trans.Nationality_Father_id') }}</label>
                                 <select class="custom-select my-1 mr-sm-2" name="nationality_id">
                                     <option selected>{{ trans('Parent_trans.Choose') }}...</option>
@@ -128,7 +128,7 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="col-xl-3">
+                            <div class="col-xl-3  mb-3">
                                 <label>{{ trans('students.blood_type') }}</label>
                                 <select class="custom-select my-1 mr-sm-2" name="blood_id">
                                     <option selected>{{ trans('Parent_trans.Choose') }}...</option>
@@ -147,7 +147,7 @@
                         <h2 class="content-heading mb-4">{{ trans('students.student_information') }}</h2>
 
                         <div class="form-row my-3">
-                            <div class="col-xl-2">
+                            <div class="col-xl-2 mb-3">
                                 <label>{{ trans('students.grade') }}</label>
                                 <select class="custom-select my-1 mr-sm-2" name="grade_id">
                                     <option selected>{{ trans('Parent_trans.Choose') }}...</option>
@@ -156,20 +156,20 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="col-xl-2">
+                            <div class="col-xl-2 mb-3">
                                 <label>{{ trans('students.classrooms') }}</label>
                                 <select class="custom-select my-1 mr-sm-2" name="classroom_id">
 
                                 </select>
                             </div>
-                            <div class="col-xl-2">
+                            <div class="col-xl-2 mb-3">
                                 <label>{{ trans('students.section') }}</label>
                                 <select class="custom-select my-1 mr-sm-2" name="section_id">
 
                                 </select>
                             </div>
 
-                            <div class="col-xl-3">
+                            <div class="col-xl-3 mb-3">
                                 <label>{{ trans('main_trans.Parents') }}</label>
                                 <select class="custom-select my-1 mr-sm-2" name="parent_id">
                                     <option selected>{{ trans('Parent_trans.Choose') }}...</option>
@@ -178,7 +178,7 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="col-xl-3">
+                            <div class="col-xl-3 mb-3">
                                 <label>{{ trans('students.academic_year') }}</label>
                                 <select class="custom-select my-1 mr-sm-2" name="academic_year">
                                     <option selected>{{ trans('Parent_trans.Choose') }}...</option>
@@ -189,7 +189,20 @@
                                         <option value="{{ $year}}">{{ $year }}</option>
                                     @endfor
                                 </select>
+                            </div>
+                        </div>
 
+                        <div class="form-row mt-3">
+                            <div class="col-xl-6 offset-xl-3">
+                                <div class="form-group">
+                                    <label>{{ trans('students.attachments') }}</label>
+                                    <div class="custom-file">
+                                        <!-- Populating custom file input label with the selected filename (data-toggle="custom-file-input" is initialized in Helpers.coreBootstrapCustomFileInput()) -->
+                                        <!-- When multiple files are selected, we use the word 'Files'. You can easily change it to your own language by adding the following to the input, eg for DE: data-lang-files="Dateien" -->
+                                        <input type="file" class="custom-file-input" accept="image/*" data-toggle="custom-file-input" id="student_attachments" name="photos[]" multiple>
+                                        <label class="custom-file-label" for="student_attachments">{{ trans('students.choose_file') }}</label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -230,7 +243,7 @@
             });
         });
     </script>
-     <script>
+    <script>
         $(document).ready(function () {
             $('select[name="classroom_id"]').on('change', function () {
                 var Classroom_id = $(this).val();

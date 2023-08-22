@@ -36,10 +36,9 @@ class StudentController extends Controller
         return $this->student->editStudent($id);
     }
 
-
     public function show($id)
     {
-        //
+        return $this->student->showStudent($id);
     }
 
     public function update(StoreStudentsRequest $request)
@@ -52,6 +51,9 @@ class StudentController extends Controller
         return $this->student->deleteStudent($id);
     }
 
+
+    // ========= Other Methods =========
+
     // get classrooms for ajax call
     public function Get_classrooms($id)
     {
@@ -62,5 +64,21 @@ class StudentController extends Controller
     public function Get_Sections($id)
     {
         return $this->student->Get_Sections($id);
+    }
+
+    // upload Attachments
+    public function upload_attachments(Request $request) {
+        return $this->student->upload_attachments($request);
+    }
+
+    // Download Attachments
+    public function downloadAttachments($studentName, $fileName) {
+        return $this->student->download_attachments($studentName, $fileName);
+    }
+
+    // Delete Attachments
+    public function delete_attachment(Request $request)
+    {
+        return $this->student->delete_attachment($request);
     }
 }

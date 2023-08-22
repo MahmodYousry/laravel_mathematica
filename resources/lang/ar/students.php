@@ -19,8 +19,16 @@ return [
     'academic_year' => 'السنة الدراسية',
     'submit' => 'حفظ البيانات',
     'close' => 'اغلاق',
+    'attachments' => 'المرفقات',
+    'choose_file' => 'اختر ملف',
+    'show' => 'عرض',
     'delete_student' => 'حذف بيانات الطالب',
     'delete_student_check' => 'هل انت متأكد من عملية حذف الطالب ؟',
+    'file_name' => 'اسم الملف',
+    'created_at' => 'تاريخ الرفع',
+    'download' => 'تنزيل',
+    'delete' => 'حذف',
+    'sure' => 'تأكيد',
 
 
 

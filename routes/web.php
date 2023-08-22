@@ -58,6 +58,11 @@ function(){
     Route::get('/Get_classrooms/{id}', [StudentController::class, 'Get_classrooms']);
     Route::get('/Get_Sections/{id}', [StudentController::class, 'Get_Sections']);
 
+    // Student Attachments
+    Route::post('/upload_attachments', [StudentController::class, 'upload_attachments'])->name('upload_attachments');
+    Route::get('/download_attachments/{studentName}/{fileName}', [StudentController::class, 'downloadAttachments'])->name('downloadAttachments');
+    Route::post('delete_attachments', [StudentController::class, 'delete_attachment'])->name('delete_attachment');
+
     // Resources
     Route::resource('students', StudentController::class);
     Route::resource('teachers', TeacherController::class);

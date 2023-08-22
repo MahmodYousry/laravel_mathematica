@@ -31,7 +31,6 @@
                     <a href="{{ route('students.create') }}" class="btn btn-success mr-1 mb-3">
                         <i class="fa fa-fw fa-plus mr-1"></i> {{ trans('main_trans.add_student') }}
                     </a>
-
                     {{-- errors And Alerts --}}
                     @if ($errors->any())
                         @foreach ($errors->all() as $error)
@@ -43,35 +42,9 @@
                             </div>
                         @endforeach
                     @endif
-                    @if(session('success'))
-                        <div class="alert alert-success d-flex align-items-center animated fadeInDown" role="alert">
-                            <div class="flex-00-auto">
-                                <i class="fa fa-fw fa-check"></i>
-                            </div>
-                            <div class="flex-fill ml-3">
-                                <p class="mb-0 text-capitalize">{{ session('success') }}</p>
-                            </div>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                            </button>
-                        </div>
-                    @endif
-                    @if(session('error'))
-                        <div class="alert alert-danger d-flex align-items-center animated fadeInDown" role="alert">
-                            <div class="flex-00-auto">
-                                <i class="far fa-sad-tear fa-fw"></i>
-                            </div>
-                            <div class="flex-fill ml-3">
-                                <p class="mb-0 text-capitalize">{{ session('error') }}</p>
-                            </div>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                            </button>
-                        </div>
-                    @endif
                     {{-- end errors And Alerts --}}
                     <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _js/pages/be_tables_datatables.js -->
-                    <table id="datatable" class="table table-bordered table-striped table-vcenter js-dataTable-full">
+                    <table id="datatable" class="table table-responsive-xl table-bordered table-striped table-vcenter js-dataTable-full">
                         <thead>
                             <tr>
                                 <th class="text-center" style="width: 60px;">ID</th>
@@ -92,7 +65,6 @@
                             </tr>
                         </thead>
                         <tbody>
-
                             @foreach ($students as $student)
                                 <tr>
                                     <td class="text-center font-size-sm">{{$loop->iteration}}</td>
@@ -104,15 +76,18 @@
                                     <td>{{ $student->classroom->class_name }}</td>
                                     <td>{{ $student->section->section_name }}</td>
                                     <td>
-                                        <div class="d-flex flex-xs-column flex-sm-column flex-md-row justify-content-start">
-
-                                            <a href="{{ route('students.edit', $student->id) }}" class="btn btn-sm btn-primary m-1">
-                                                <i class="fa fa-fw fa-edit mr-1"></i>{{ trans('grades.edit') }}
+                                        <div class="d-flex flex-xs-column flex-sm-column flex-md-row justify-content-around aligm-items-sm-between">
+                                            <a href="{{ route('students.show', $student->id) }}" class="btn btn-sm btn-info w-xl-25">
+                                                <i class="fa fa-fw fa-eye"></i>
                                             </a>
 
-                                            <button type="button" class="btn btn-sm btn-danger m-1" data-toggle="modal"
+                                            <a href="{{ route('students.edit', $student->id) }}" class="btn btn-sm btn-primary w-xl-25">
+                                                <i class="fa fa-fw fa-edit"></i>
+                                            </a>
+
+                                            <button type="button" class="btn btn-sm btn-danger w-xl-25" data-toggle="modal"
                                                         data-target="#modal-delete-student{{$student->id}}">
-                                                <i class="fa fa-fw fa-times mr-1"></i>{{ trans('grades.delete') }}
+                                                <i class="fa fa-fw fa-times"></i>
                                             </button>
                                         </div>
                                     </td>
