@@ -30,4 +30,15 @@ return [
     'delete' => 'Delete',
     'sure' => 'Confirmation',
 
+    // promotions page
+    'old_grade'         => 'Old Grade',
+    'old_classroom'     => 'Old classroom',
+    'old_section'       => 'Old section',
+    'academic_year'     => 'Academic Year',
+
+    'current_grade'         => 'Current Grade',
+    'current_classroom'     => 'Current Classroom',
+    'current_section'       => 'Current Section',
+    'current_academic_year' => 'Current Academic Year',
+
 ];

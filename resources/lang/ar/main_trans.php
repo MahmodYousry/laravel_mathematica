@@ -16,10 +16,13 @@ return [
     'students'                  => 'الطلاب',
     'students_list'             => 'قائمة الطلاب',
     'add_student'               => 'اضافة طالب جديد',
-    'information_student'       => 'بيانات الطلاب',
+    'students_promotion'        => 'ترقية الطلاب',
+    'student_information'       => 'بيانات الطلاب',
     'edit_student'              => 'تعديل بيانات طالب',
-    'Students_upgrade'          => 'ترقية الطلاب',
-    'Graduate_students'         => 'تخرج الطلاب',
+    'students_upgrade'          => 'ترقية الطلاب',
+    'graduate_students'         => 'تخرج الطلاب',
+    'graduate_add'              => 'أضافة تخرج جديد',
+    'graduate_list'             => 'قائمة التخرجات',
     'Teachers'                  => 'المعلمين',
     'List_Teachers'             => 'قائمة المعلمين',
     'Parents'                   => 'اولياء الامور',
@@ -33,7 +36,15 @@ return [
     'Settings'                  => 'الاعدادات',
     'Users'                     => 'المستخدمين',
     'Copyright'                 => 'جميع الحقوق محفوظة ',
-    'Name_Programer'            => 'محمود يسرى سوفت'
+    'Name_Programer'            => 'محمود يسرى سوفت',
+
+    // student promotions admin index page
+    'old_grade' => 'المرحلة الدراسية القديمة',
+    'new_grade' => 'المرحلة الدراسية الجديدة',
+    'confirm'   => 'تأكيد',
+    'students_manage_promotion' => 'ادارة ترقية الطلاب',
+    '' => '',
+    '' => '',
 
 
 ];

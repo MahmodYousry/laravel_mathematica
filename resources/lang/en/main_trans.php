@@ -16,10 +16,13 @@ return [
     'students'              => 'Students',
     'students_list'         => 'Students List',
     'add_student'           => 'Add Student',
+    'students_promotion'    => 'Students Promotion',
     'information_student'   => 'Students Information',
     'edit_student'          => 'Edit Student',
-    'Students_upgrade'      => 'Upgrade Students',
-    'Graduate_students'     => 'Graduate Students',
+    'students_upgrade'      => 'Upgrade Students',
+    'graduate_students'     => 'Graduate Students',
+    'graduate_add'          => 'Add Graduate',
+    'graduate_list'         => 'Graduate List',
     'Teachers'              => 'Teachers',
     'List_Teachers'         => 'Teachers List',
     'Parents'               => 'Parents',
@@ -33,7 +36,18 @@ return [
     'Settings'              => 'Settings',
     'Users'                 => 'Users',
     'Copyright'             => 'Copyright',
-    'Name_Programer'        => 'Mahmoud Yousry MoraSoft All Rights Reserved'
+    'student_information'   => 'Student Information',
+    'Name_Programer'        => 'Mahmoud Yousry MoraSoft All Rights Reserved',
+
+    // student promotions admin index page
+    'old_grade' => 'Old Grade',
+    'new_grade' => 'New Grade',
+    'confirm' => 'Confirm',
+    'students_manage_promotion' => 'Students Manage Promotion',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
 
 
 ];

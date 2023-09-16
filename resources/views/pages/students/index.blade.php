@@ -32,17 +32,8 @@
                         <i class="fa fa-fw fa-plus mr-1"></i> {{ trans('main_trans.add_student') }}
                     </a>
                     {{-- errors And Alerts --}}
-                    @if ($errors->any())
-                        @foreach ($errors->all() as $error)
-                            <div class="alert alert-danger alert-dismissable" role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">×</span>
-                                </button>
-                                <p class="mb-0">{{ $error }}</p>
-                            </div>
-                        @endforeach
-                    @endif
-                    {{-- end errors And Alerts --}}
+                    @include('components.errors')
+
                     <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _js/pages/be_tables_datatables.js -->
                     <table id="datatable" class="table table-responsive-xl table-bordered table-striped table-vcenter js-dataTable-full">
                         <thead>
@@ -60,6 +51,7 @@
                                 <th>{{ trans('students.grade') }}</th>
                                 <th>{{ trans('students.classrooms') }}</th>
                                 <th>{{ trans('students.section') }}</th>
+                                <th>{{ trans('students.current_academic_year') }}</th>
 
                                 <th style="width: 15%;">{{ trans('grades.action') }}</th>
                             </tr>
@@ -75,6 +67,7 @@
                                     <td>{{ $student->grade->name }}</td>
                                     <td>{{ $student->classroom->class_name }}</td>
                                     <td>{{ $student->section->section_name }}</td>
+                                    <td>{{ $student->academic_year }}</td>
                                     <td>
                                         <div class="d-flex flex-xs-column flex-sm-column flex-md-row justify-content-around aligm-items-sm-between">
                                             <a href="{{ route('students.show', $student->id) }}" class="btn btn-sm btn-info w-xl-25">

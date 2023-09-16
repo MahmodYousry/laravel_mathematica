@@ -30,6 +30,17 @@ return [
     'delete' => 'حذف',
     'sure' => 'تأكيد',
 
+    // promotions page
+    'old_grade'         => 'الصف الدراسى السابق',
+    'old_classroom'     => 'الفصل السابق',
+    'old_section'       => 'القسم السابق',
+    'academic_year'     => 'العام الدراسى السابق',
+
+    'current_grade'         => 'الصف الدراسى الحالى',
+    'current_classroom'     => 'الفصل الحالى',
+    'current_section'       => 'القسم الحالى',
+    'current_academic_year' => 'العام الدراسى الحالى',
+
 
 
 ];

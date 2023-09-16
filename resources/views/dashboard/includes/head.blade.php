@@ -89,7 +89,7 @@
         -->
 
         @if (App::getLocale() == 'en')
-            <?php $lang_theme = 'block-header-default'; ?>
+            @php $lang_theme = 'block-header-default'; @endphp
         @else
-            <?php $lang_theme = 'block-header-rtl'; ?>
+            @php $lang_theme = 'block-header-rtl'; @endphp
         @endif

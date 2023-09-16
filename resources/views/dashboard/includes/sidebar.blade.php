@@ -180,17 +180,67 @@
                             </a>
                             <ul class="nav-main-submenu">
                                 <li class="nav-main-item">
-                                    <a class="nav-main-link" href="{{ route('students.create') }}">
-                                        <span class="nav-main-link-name">{{ trans('main_trans.add_student') }}</span>
+                                    <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                                        <span class="nav-main-link-name">{{ trans('main_trans.student_information') }}</span>
                                     </a>
+                                    <ul class="nav-main-submenu">
+                                        <li class="nav-main-item">
+                                            <a class="nav-main-link" href="{{ route('students.create') }}">
+                                                <span class="nav-main-link-name">{{ trans('main_trans.add_student') }}</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-main-item">
+                                            <a class="nav-main-link" href="{{ route('students.index') }}">
+                                                <span class="nav-main-link-name">{{ trans('main_trans.students_list') }}</span>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
+
                                 <li class="nav-main-item">
-                                    <a class="nav-main-link" href="{{ route('students.index') }}">
-                                        <span class="nav-main-link-name">{{ trans('main_trans.students_list') }}</span>
+                                    <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                                        <span class="nav-main-link-name">{{ trans('main_trans.students_upgrade') }}</span>
                                     </a>
+                                    <ul class="nav-main-submenu">
+                                        <li class="nav-main-item">
+                                            <a class="nav-main-link" href="{{ route('promotion.index') }}">
+                                                <span class="nav-main-link-name">{{ trans('main_trans.students_promotion') }}</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-main-item">
+                                            <a class="nav-main-link" href="{{ route('promotion.create') }}">
+                                                <span class="nav-main-link-name">{{ trans('main_trans.students_manage_promotion') }}</span>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
+
+                                <li class="nav-main-item">
+                                    <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                                        <span class="nav-main-link-name">{{ trans('main_trans.graduate_students') }}</span>
+                                    </a>
+                                    <ul class="nav-main-submenu">
+                                        <li class="nav-main-item">
+                                            <a class="nav-main-link" href="#">
+                                                <span class="nav-main-link-name">{{ trans('main_trans.graduate_add') }}</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-main-item">
+                                            <a class="nav-main-link" href="#">
+                                                <span class="nav-main-link-name">{{ trans('main_trans.graduate_list') }}</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+
+
+
                             </ul>
                         </li>
+
+
+
 
                         <li class="nav-main-heading">Others</li>
 

@@ -117,44 +117,7 @@
                     <!-- END add modal Content -->
                     <!-- END add button -->
 
-                    {{-- errors And Alerts --}}
-                    @if ($errors->any())
-                        @foreach ($errors->all() as $error)
-                            <div class="alert alert-danger alert-dismissable" role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">×</span>
-                                </button>
-                                <p class="mb-0">{{ $error }}</p>
-                            </div>
-                        @endforeach
-                    @endif
-                    @if(session('success'))
-                        <div class="alert alert-success d-flex align-items-center animated fadeInDown" role="alert">
-                            <div class="flex-00-auto">
-                                <i class="fa fa-fw fa-check"></i>
-                            </div>
-                            <div class="flex-fill ml-3">
-                                <p class="mb-0 text-capitalize">{{ session('success') }}</p>
-                            </div>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                            </button>
-                        </div>
-                    @endif
-                    @if(session('error'))
-                        <div class="alert alert-danger d-flex align-items-center animated fadeInDown" role="alert">
-                            <div class="flex-00-auto">
-                                <i class="far fa-sad-tear fa-fw"></i>
-                            </div>
-                            <div class="flex-fill ml-3">
-                                <p class="mb-0 text-capitalize">{{ session('error') }}</p>
-                            </div>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                            </button>
-                        </div>
-                    @endif
-                    {{-- end errors And Alerts --}}
+                    @include('components.errors')
 
                     <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _js/pages/be_tables_datatables.js -->
                     <table id="datatable" class="table table-bordered table-striped table-vcenter js-dataTable-full">
