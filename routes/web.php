@@ -8,6 +8,7 @@ use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\Grades\GradeController;
 use App\Http\Controllers\SectionController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\students\graduateController;
 use App\Http\Controllers\students\PromotionController;
 use App\Http\Controllers\TeacherController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -71,6 +72,7 @@ function(){
     Route::resource('classrooms', ClassroomController::class);
     Route::resource('grades', GradeController::class);
     Route::resource('promotion', PromotionController::class);
+    Route::resource('graduate', graduateController::class);
 
 
 

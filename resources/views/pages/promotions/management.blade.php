@@ -113,13 +113,13 @@
                                             <button type="button" class="btn btn-sm btn-outline-danger w-xl-25 mr-2"
                                                 data-toggle="modal"
                                                 data-target="#delete-this{{ $promotion->id }}">
-                                                ارجاع الطالب
+                                                {{ trans('main_trans.return_student') }}
                                             </button>
 
                                             <button type="button" class="btn btn-sm btn-outline-success w-xl-25"
                                                 data-toggle="modal"
                                                 data-target="#student-graduate{{ $promotion->student_id }}">
-                                                تخرج الطالب
+                                                {{ trans('main_trans.graduate_student') }}
                                             </button>
                                         </div>
                                     </td>

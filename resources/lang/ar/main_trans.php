@@ -15,6 +15,7 @@ return [
     'List_sections'             => 'قائمة الاقسام الدراسية',
     'students'                  => 'الطلاب',
     'students_list'             => 'قائمة الطلاب',
+    'stud_graduated_list'       => 'قائمة الطلاب المتخرجين',
     'add_student'               => 'اضافة طالب جديد',
     'students_promotion'        => 'ترقية الطلاب',
     'student_information'       => 'بيانات الطلاب',
@@ -39,11 +40,14 @@ return [
     'Name_Programer'            => 'محمود يسرى سوفت',
 
     // student promotions admin index page
-    'old_grade' => 'المرحلة الدراسية القديمة',
-    'new_grade' => 'المرحلة الدراسية الجديدة',
-    'confirm'   => 'تأكيد',
+    'old_grade'                 => 'المرحلة الدراسية القديمة',
+    'grade'                     => 'المرحلة الدراسية',
+    'new_grade'                 => 'المرحلة الدراسية الجديدة',
+    'confirm'                   => 'تأكيد',
     'students_manage_promotion' => 'ادارة ترقية الطلاب',
-    '' => '',
+    'return_student'            => 'ارجاع الطالب',
+    'delete_student'            => 'حذف الطالب',
+    'graduate_student'          => 'تخرج الطالب',
     '' => '',
 
 

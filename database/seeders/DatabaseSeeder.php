@@ -6,11 +6,6 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     *
-     * @return void
-     */
     public function run()
     {
         // Blood Type Seeder
@@ -25,5 +20,10 @@ class DatabaseSeeder extends Seeder
         $this->call(GenderSeeder::class);
         // Specialization Of Subject
         $this->call(SpecializationSeeder::class);
+
+        // call this with quee
+        $this->call(teachersSectionsSeeder::class);
+        $this->call(sectionsSeeder::class);
+        $this->call(classroomsSeeder::class);
     }
 }

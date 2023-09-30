@@ -15,7 +15,11 @@ class SpecializationSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('specializations')->delete();
+
+        // if specializations table has at least one data truncate if not do nothing
+        if (DB::table('specializations')->first()) {
+            DB::table('specializations')->truncate();
+        }
 
         $specializations = [
             ['en'=> 'Arabic', 'ar'=> 'اللغة العربية'],

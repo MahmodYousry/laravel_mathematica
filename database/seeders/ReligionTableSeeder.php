@@ -15,7 +15,11 @@ class ReligionTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('religions')->truncate();
+
+        // if religions table has at least one data truncate if not do nothing
+        if (DB::table('religions')->first()) {
+            DB::table('religions')->truncate();
+        }
 
         $religions = [
 

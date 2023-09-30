@@ -15,7 +15,11 @@ class GenderSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('genders')->delete();
+
+        // if genders table has at least one data truncate if not do nothing
+        if (DB::table('genders')->first()) {
+            DB::table('genders')->truncate();
+        }
 
         $genders = [
             ['en' => 'Male', 'ar' => 'ذكر'],

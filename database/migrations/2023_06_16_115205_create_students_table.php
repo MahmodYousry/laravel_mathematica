@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateStudentsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('students', function (Blueprint $table) {
@@ -33,15 +28,12 @@ class CreateStudentsTable extends Migration
 
             $table->string('academic_year');
 
+            $table->softDeletes();
+
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('students');

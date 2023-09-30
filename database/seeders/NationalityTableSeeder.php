@@ -15,7 +15,7 @@ class NationalityTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('nationalities')->truncate();
+        DB::table('nationalities')->delete();
 
         $nationals = [
 
@@ -40,8 +40,8 @@ class NationalityTableSeeder extends Seeder
             ],
             [
 
-                'en'=> 'American Samoan',
-                'ar'=> 'أمريكي سامواني'
+                'en'=> 'American',
+                'ar'=> 'أمريكي'
             ],
             [
 

@@ -22,3 +22,17 @@
         </button>
     </div>
 @endif
+
+@if(session('error'))
+    <div class="alert alert-danger d-flex align-items-center animated fadeInDown" role="alert">
+        <div class="flex-00-auto">
+            <i class="fa fa-fw fa-check"></i>
+        </div>
+        <div class="flex-fill ml-3">
+            <p class="mb-0 text-capitalize">{{ session('error') }}</p>
+        </div>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+@endif

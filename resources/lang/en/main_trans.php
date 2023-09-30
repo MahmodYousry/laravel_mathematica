@@ -15,6 +15,7 @@ return [
     'List_sections'         => 'Sections List',
     'students'              => 'Students',
     'students_list'         => 'Students List',
+    'stud_graduated_list'   => 'Students Graduated List',
     'add_student'           => 'Add Student',
     'students_promotion'    => 'Students Promotion',
     'information_student'   => 'Students Information',
@@ -41,11 +42,13 @@ return [
 
     // student promotions admin index page
     'old_grade' => 'Old Grade',
+    'grade'     => 'Grade',
     'new_grade' => 'New Grade',
-    'confirm' => 'Confirm',
+    'confirm'   => 'Confirm',
     'students_manage_promotion' => 'Students Manage Promotion',
-    '' => '',
-    '' => '',
+    'return_student' => 'Return Student',
+    'delete_student' => 'Delete Student',
+    'graduate_student' => 'Graduate Student',
     '' => '',
     '' => '',
 

@@ -221,12 +221,12 @@
                                     </a>
                                     <ul class="nav-main-submenu">
                                         <li class="nav-main-item">
-                                            <a class="nav-main-link" href="#">
+                                            <a class="nav-main-link" href="{{ route('graduate.create') }}">
                                                 <span class="nav-main-link-name">{{ trans('main_trans.graduate_add') }}</span>
                                             </a>
                                         </li>
                                         <li class="nav-main-item">
-                                            <a class="nav-main-link" href="#">
+                                            <a class="nav-main-link" href="{{ route('graduate.index') }}">
                                                 <span class="nav-main-link-name">{{ trans('main_trans.graduate_list') }}</span>
                                             </a>
                                         </li>
