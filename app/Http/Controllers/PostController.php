@@ -24,6 +24,7 @@ class PostController extends Controller
 
       $post->title = $request->title;
       $post->content = $request->content;
+      $post->user_id = auth()->user()->id;
 
       $post->save();
 
@@ -46,31 +47,25 @@ class PostController extends Controller
     {
       try {
         $post = Post::findOrFail($id);
-        if ($post->update($request->all())) {
-            return redirect()->route('blog.index')->with('success', 'Post Edited Successfuly');
-        } else {
-            return redirect()->route('blog.index')->with('error', 'Failed To Edit The Post.');
-        }
-      }
-      catch (\Exception $e) {
-          return redirect()->route('blog.index')->with('error', 'Failed to delete post: ' . $e->getMessage());
+        $post->update($request->all());
+        return redirect()->route('blog.index')->with('success', 'Post Edited Successfuly');
+
+      } catch (\Exception $e) {
+        return redirect()->route('blog.index')->with('error', 'Failed to delete post: ' . $e->getMessage());
       }
     }
 
     public function destroy($id)
     {
-
-        try {
-            $post = Post::findOrFail($id);
-            if ($post->delete()) {
-                return redirect()->route('blog.index')->with('success', 'Post deleted successfully !');
-            } else {
-                return redirect()->route('blog.index')->with('error', 'Failed To Delete The Post.');
-            }
+      try {
+        $post = Post::findOrFail($id);
+        if ($post->delete()) {
+          return redirect()->route('blog.index')->with('success', 'Post deleted successfully !');
+        } else {
+          return redirect()->route('blog.index')->with('error', 'Failed To Delete The Post.');
         }
-
-        catch (\Exception $e) {
-            return redirect()->route('blog.index')->with('error', 'Failed to delete post: ' . $e->getMessage());
-        }
+      } catch (\Exception $e) {
+        return redirect()->route('blog.index')->with('error', 'Failed to delete post: ' . $e->getMessage());
+      }
     }
 }

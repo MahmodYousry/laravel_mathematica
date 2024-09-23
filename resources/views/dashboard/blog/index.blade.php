@@ -59,25 +59,7 @@
           @endforeach
 
           <!-- Pagination -->
-          <nav aria-label="Page navigation">
-            {{ $posts->links() }}
-            <ul class="pagination push">
-              <li class="page-item active">
-                <a class="page-link" href="javascript:void(0)">1</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="javascript:void(0)">2</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="javascript:void(0)" aria-label="Next">
-                  <span aria-hidden="true">
-                    <i class="fa fa-angle-right"></i>
-                  </span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
+          {{ $posts->links() }}
           <!-- END Pagination -->
       </div>
       <div class="col-xl-4">
