@@ -1,20 +1,33 @@
 <?php
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\ClassroomController;
-use App\Http\Controllers\Grades\GradeController;
 use App\Http\Controllers\SectionController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\ClassroomController;
+use App\Http\Controllers\Grades\GradeController;
 use App\Http\Controllers\students\graduateController;
 use App\Http\Controllers\students\PromotionController;
-use App\Http\Controllers\TeacherController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 
+// Route::get('sendEmail', function () {
+//     Mail::raw('hi this is new email from me in laravel', function ($message) {
+//         $message->to('hguhfdsa@gmail.com')->subject('noreplay');
+//     });
+
+//     dd('success');
+// });
+
+Route::get('send-mail', [MailController::class, 'index']);
+
 Auth::routes();
+
 // For All
 Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
     /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/

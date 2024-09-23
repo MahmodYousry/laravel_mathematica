@@ -28,21 +28,20 @@ class ClassroomController extends Controller
     public function store(StoreClassroom $request)
     {
 
-        $validatedData = $request->validated();
+      $validatedData = $request->validated();
 
-        try {
-            foreach ($validatedData as $data) {
-                $classroom = new Classroom();
-                $classroom->class_name = ['en' => $data['class_name_en'], 'ar' => $data['class_name']];
-                $classroom->grade_id = $data['grade_id'];
-                $classroom->save();
-            }
+      try {
+          foreach ($validatedData as $data) {
+            $classroom = new Classroom();
+            $classroom->class_name = ['en' => $data['class_name_en'], 'ar' => $data['class_name']];
+            $classroom->grade_id = $data['grade_id'];
+            $classroom->save();
+          }
 
-            return response()->json(['message' => 'Data saved successfully']);
-        } catch (\Exception $e) {
-            return response()->json(['error' => $e->getMessage()], 500);
-        }
-
+          return response()->json(['message' => 'Data saved successfully']);
+      } catch (\Exception $e) {
+          return response()->json(['error' => $e->getMessage()], 500);
+      }
 
     }
 
