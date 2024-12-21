@@ -16,7 +16,7 @@ return [
     'posts' => 'Posts',
     'continue_reading' => 'Continue Reading ..',
     'edit_post' => 'Edit Post',
-    '' => '',
+    'update' => 'Update Post',
     '' => '',
     '' => '',
 ];

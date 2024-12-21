@@ -1,24 +1,21 @@
-
 /* Blog Page index */
 .content .block-content p iframe,
 .story p iframe {
-    width: 100%;
-    height: auto !important;
-    aspect-ratio: 16/9;
-    border: 5px solid rgb(39 46 56);
-    box-sizing: content-box;
+  width: 100%;
+  height: auto !important;
+  aspect-ratio: 16/9;
+  border: 5px solid rgb(39 46 56);
+  box-sizing: content-box;
 }
 
 .content .block-content img,
 .story p img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
-.content .block-content p pre,
-pre {
-    background: #444;
-    padding: 10px 20px;
-    border-radius: 6px;
-    color: #eee;
+.content pre {
+  background: #444;
+  border-radius: 3px;
+  color: #eee;
+  padding: 10px;
 }
-

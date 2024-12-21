@@ -50,5 +50,8 @@ return [
     'graduate_student'          => 'تخرج الطالب',
     '' => '',
 
+    // create post page
+    'post_img_prev' => 'معاينة صورة المقالة',
+
 
 ];

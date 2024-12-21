@@ -50,7 +50,7 @@
         <script>jQuery(function () {
             One.helpers(['sparkline', 'magnific-popup', 'ckeditor5', 'summernote', 'ckeditor', 'simplemde', 'js-wizard', 'datepicker', 'flatpickr']);
         });</script>
-
+        @livewireScripts()
         @yield('scripts')
 
     </body>

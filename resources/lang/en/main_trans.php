@@ -52,5 +52,8 @@ return [
     '' => '',
     '' => '',
 
+    // create post page
+    'post_img_prev' => 'Post Thumbnail Preview',
+
 
 ];

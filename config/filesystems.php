@@ -35,6 +35,13 @@ return [
             'root' => storage_path('app'),
         ],
 
+        'posts_images' => [
+          'driver' => 'local',
+          'root' => storage_path('app/public/posts_images'), // Correct path
+          'visibility' => 'public', // Ensure the visibility is public for web access
+        ],
+
+
         'parent_attachments' => [
             'driver' => 'local',
             'root' => storage_path('app/parent_attachments'),
